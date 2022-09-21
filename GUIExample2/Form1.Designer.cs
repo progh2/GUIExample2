@@ -29,12 +29,69 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.foodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "짜장면",
+            "짬뽕",
+            "탕수육",
+            "라조기",
+            "동파육",
+            "양꼬치",
+            "마라탕"});
+            this.comboBox1.Location = new System.Drawing.Point(13, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 26);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.foodBindingSource;
+            this.listBox1.DisplayMember = "Name";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(13, 46);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(186, 130);
+            this.listBox1.TabIndex = 1;
+            this.listBox1.ValueMember = "Price";
+
+            // 
+            // foodBindingSource
+            // 
+            this.foodBindingSource.DataSource = typeof(GUIExample2.Food);
+            
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+            
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.BindingSource foodBindingSource;
+
+
     }
 }
 
